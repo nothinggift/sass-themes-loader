@@ -10,6 +10,10 @@ module.exports = function (sassString, keepNormalCss) {
     .replace(variableAssignmentReg, '')  // remove all variable assignment
     .replace(variableStyleReg, '-style-name-$1-variables-$2') // replace style to avoid parse error
 
+  if (!sassString) {
+    return sassString
+  }
+
   var result = sass.renderSync({
     data: sassString,
     outputStyle: 'compact'

@@ -1,6 +1,6 @@
 {
   "name": "sass-themes-loader",
-  "version": "0.1.0",
+  "version": "0.1.4",
   "description": "Sass themes loader module for webpack",
   "main": "dist/index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "build": "babel ./src -d ./dist && webpack --config ./demo/webpack.config.js --env.prod=true",
     "test": "node test/test.js",
     "lint": "eslint --ext=.js ./src",
-    "postpublish": "rimraf dist && git push --follow-tags",
+    "post": "rimraf dist && npm build && git push",
     "demo": "webpack-dev-server --hot --config ./demo/webpack.config.js --inline"
   },
   "repository": {

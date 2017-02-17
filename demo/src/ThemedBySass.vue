@@ -52,7 +52,45 @@
           </div>
         </md-card>
         <h2 class="md-title">webpack config</h2>
-        <code-block language="javascript" class="code-block">{{webpackConfig}}</code-block>
+        <code-block language="javascript" class="code-block" :format="false">// webpack1
+module: {
+  loaders: [
+    {
+      test: /\.scss$/,
+      loader: 'vue-style-loader!css-loader!sass-loader!sass-themes-loader'
+    }
+  ]
+},
+'sassThemes': {
+  themePath: "absolute path of theme folder",
+  //defaultTheme: "default theme name",
+  //excludeTheme: ["themeName", "themeName"],
+  //only: ["path of sass file"]
+}
+
+//webpack2
+module: {
+  loaders: [
+    {
+      test: /\.scss$/,
+      use: [
+        "style-loader",
+        "css-loader",
+        "sass-loader",
+        {
+          loader: "sass-themes-loader",
+          options: {
+            themePath: "absolute path of theme folder",
+            //defaultTheme: "default theme name",
+            //excludeTheme: ["themeName", "themeName"],
+            //only: ["path of sass file"]
+          }
+        }
+      ]
+    },
+  ]
+}
+        </code-block>
       </md-layout>
       <md-layout md-flex="33" md-column >
         <h2 class="md-title">option</h2>
