@@ -27,13 +27,18 @@
 
   export default {
     data () {
-      return {}
+      return {
+        index: 0
+      }
     },
     methods: {
-      removeDefaultTheme: function () {
-        manager.removeTheme('default')
-        manager.removeTheme('style1')
-        manager.removeTheme('style2')
+      removeDefaultTheme: function (index) {
+        if (index !== this.index) {
+          manager.removeTheme('default')
+          manager.removeTheme('style1')
+          manager.removeTheme('style2')
+        }
+        this.index = index
       }
     },
     components: {
