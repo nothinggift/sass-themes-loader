@@ -11,7 +11,7 @@ module.exports = function (file) {
   let files = output.stats.includedFiles
   files.reverse()
   let sassString = ''
-  for (i in files) {
+  for (let i in files) {
     let str = fs.readFileSync(files[i]).toString()
     sassString += str.replace(importReg, '')
   }

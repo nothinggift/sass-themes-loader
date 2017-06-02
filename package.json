@@ -1,6 +1,6 @@
 {
   "name": "sass-themes-loader",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Sass themes loader module for webpack",
   "main": "dist/index.js",
   "scripts": {
@@ -25,7 +25,12 @@
     "url": "https://github.com/nordnet/sass-variable-loader/issues"
   },
   "homepage": "https://github.com/nordnet/sass-variable-loader/#readme",
-  "dependencies": {},
+  "peerDependencies": {
+    "node-sass": "^4.0.0"
+  },
+  "dependencies": {
+    "loader-utils": "^0.2.16"
+  },
   "devDependencies": {
     "babel": "^6.3.26",
     "babel-cli": "^6.4.0",
@@ -52,7 +57,6 @@
     "html-webpack-plugin": "^2.28.0",
     "husky": "^0.10.2",
     "loader-runner": "^2.3.0",
-    "loader-utils": "^0.2.16",
     "memory-fs": "^0.4.1",
     "mk-sass-variables-loader": "^0.0.5",
     "mocha": "^2.3.4",
