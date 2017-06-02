@@ -7,6 +7,7 @@ const getCssIncludeVariables = require('./getCssIncludeVariables')
 const getThemeVariables = require('./getThemeVariables')
 const themeRender = require('./themeRender')
 const mergeSass = require('./mergeSass')
+const variableReg = /\$[\w-]+/g
 
 function mergeOptions (obj1, obj2) {
   let obj3 = {}
@@ -14,6 +15,20 @@ function mergeOptions (obj1, obj2) {
   for (attrname in obj1) { obj3[attrname] = obj1[attrname] }
   for (attrname in obj2) { obj3[attrname] = obj2[attrname] }
   return obj3
+}
+
+function unique(arr) {
+  var ret = [];
+  var len = arr.length;
+  for(var i=0; i<len; i++){
+    for(var j=i+1; j<len; j++){
+      if(arr[i] === arr[j]){
+        j = ++i;
+      }
+    }
+    ret.push(arr[i]);
+  }
+  return ret;
 }
 
 module.exports = function (source) {
@@ -41,6 +56,12 @@ module.exports = function (source) {
 
   if (options.dynamic) {
     let allCssString = getCssIncludeVariables(sassString, true)
+    let variablesArray = unique(allCssString.match(variableReg))
+    for (let i in vars) {
+      if (variablesArray.indexOf('$' + i) === -1) {
+        delete vars[i]
+      }
+    }
     let json = {
       css: allCssString,
       variables: vars
