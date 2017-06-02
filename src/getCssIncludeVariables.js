@@ -1,7 +1,7 @@
 const sass = require('node-sass')
 
 const importReg = /\@import\s+['"]([^'"]+)['"];/g
-const commentReg = /\/\*.*\*\//g
+const commentReg = /\/\*[\s\S]*\*\//g
 const variableAssignmentReg = /\$[\w-]+\s?:[^;]+;/g
 const variableStyleReg = /([\w-]+\s?:[^;]*)\$([\w-]+[^;]*;)/g
 const styleNotIncludeVarible = /[\w-]+\s?:[^$]+;/g

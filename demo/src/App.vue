@@ -24,6 +24,8 @@
   import ThemedBySass from './ThemedBySass.vue'
   import ThemedByJs from './ThemedByJs.vue'
   import manager from '../../src/dynamicThemeManager'
+  import scss from 'theme?dynamic!./style.scss'
+  console.log(scss)
 
   export default {
     data () {
