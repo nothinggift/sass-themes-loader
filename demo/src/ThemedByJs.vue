@@ -33,7 +33,7 @@ import baseSass1 from 'sass-themes-loader?dynamic!./style1.scss';
 import baseSass2 from 'sass-themes-loader?dynamic!./style2.scss';
 
 // import theme manager
-import dynamicThemeManager from 'sass-themes/dist/dynamicThemeManager';
+import dynamicThemeManager from 'sass-themes-loader/dist/dynamicThemeManager';
 
 // save base css
 dynamicThemeManager.setBaseCss(baseSass1) // eq setBaseCss(baseSass1, 'default')

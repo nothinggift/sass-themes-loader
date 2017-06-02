@@ -1,12 +1,11 @@
 {
   "name": "sass-themes-loader",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Sass themes loader module for webpack",
   "main": "dist/index.js",
   "scripts": {
     "clean": "rimraf dist",
     "build": "babel ./src -d ./dist && webpack --config ./demo/webpack.config.js --env.prod=true",
-    "test": "node test/test.js",
     "lint": "eslint --ext=.js ./src",
     "post": "rimraf dist && npm build && git push",
     "demo": "webpack-dev-server --hot --config ./demo/webpack.config.js --inline"
@@ -39,6 +38,7 @@
     "chai": "^3.4.1",
     "connect-history-api-fallback": "^1.3.0",
     "css-loader": "^0.26.1",
+    "eslint": "^3.19.0",
     "eslint-config-standard": "^6.2.1",
     "eslint-friendly-formatter": "^2.0.7",
     "eslint-loader": "^1.6.1",
@@ -56,7 +56,7 @@
     "memory-fs": "^0.4.1",
     "mk-sass-variables-loader": "^0.0.5",
     "mocha": "^2.3.4",
-    "node-sass": "^3.4.2",
+    "node-sass": "^4.5.3",
     "prismjs": "^1.6.0",
     "rimraf": "^2.5.0",
     "sass-loader": "^5.0.1",

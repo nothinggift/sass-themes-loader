@@ -6,6 +6,7 @@ const variablesLoader = require('mk-sass-variables-loader/dist/loadSassVariables
 const getCssIncludeVariables = require('./getCssIncludeVariables')
 const getThemeVariables = require('./getThemeVariables')
 const themeRender = require('./themeRender')
+const mergeSass = require('./mergeSass')
 
 function mergeOptions (obj1, obj2) {
   let obj3 = {}
@@ -16,7 +17,7 @@ function mergeOptions (obj1, obj2) {
 }
 
 module.exports = function (source) {
-  let query = loaderUtils.parseQuery(this.query)
+  let query = loaderUtils.getOptions(this)
   let options = Object.assign({}, this.options.sassThemes, this.sassThemes, query)
   let self = this
 
@@ -35,7 +36,7 @@ module.exports = function (source) {
   }
 
   let vars = variablesLoader(this.resourcePath)
-  let sassString = fs.readFileSync(this.resourcePath).toString()
+  let sassString = mergeSass(this.resourcePath)
   let cssString = getCssIncludeVariables(sassString)
 
   if (options.dynamic) {
