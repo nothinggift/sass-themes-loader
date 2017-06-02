@@ -35,7 +35,7 @@ module.exports = function (source) {
     }
   }
 
-  let vars = variablesLoader(this.resourcePath)
+  let vars = variablesLoader(this.resourcePath, true)
   let sassString = mergeSass(this.resourcePath)
   let cssString = getCssIncludeVariables(sassString)
 

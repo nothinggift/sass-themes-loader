@@ -2991,11 +2991,12 @@ minimist@^1.1.3, minimist@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.0.tgz#a35008b20f41383eec1fb914f4cd5df79a264284"
 
-mk-sass-variables-loader@^0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/mk-sass-variables-loader/-/mk-sass-variables-loader-0.0.5.tgz#ecae2984655e35229a4f1a42258ca8ae5550b3d4"
+mk-sass-variables-loader@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/mk-sass-variables-loader/-/mk-sass-variables-loader-0.0.7.tgz#e4ae33da7af519aac5f47193b771e84ad77e8ddc"
   dependencies:
-    node-sass "^3.4.2"
+    loader-utils "^1.1.0"
+    node-sass "^4.5.1"
 
 mkdirp@0.3.0:
   version "0.3.0"
@@ -3118,28 +3119,7 @@ node-pre-gyp@^0.6.29:
     tar "^2.2.1"
     tar-pack "^3.4.0"
 
-node-sass@^3.4.2:
-  version "3.13.1"
-  resolved "https://registry.yarnpkg.com/node-sass/-/node-sass-3.13.1.tgz#7240fbbff2396304b4223527ed3020589c004fc2"
-  dependencies:
-    async-foreach "^0.1.3"
-    chalk "^1.1.1"
-    cross-spawn "^3.0.0"
-    gaze "^1.0.0"
-    get-stdin "^4.0.1"
-    glob "^7.0.3"
-    in-publish "^2.0.0"
-    lodash.assign "^4.2.0"
-    lodash.clonedeep "^4.3.2"
-    meow "^3.7.0"
-    mkdirp "^0.5.1"
-    nan "^2.3.2"
-    node-gyp "^3.3.1"
-    npmlog "^4.0.0"
-    request "^2.61.0"
-    sass-graph "^2.1.1"
-
-node-sass@^4.5.3:
+node-sass@^4.5.1, node-sass@^4.5.3:
   version "4.5.3"
   resolved "https://registry.yarnpkg.com/node-sass/-/node-sass-4.5.3.tgz#d09c9d1179641239d1b97ffc6231fdcec53e1568"
   dependencies:
@@ -4001,7 +3981,7 @@ repeating@^2.0.0:
   dependencies:
     is-finite "^1.0.0"
 
-request@2, request@^2.61.0, request@^2.79.0, request@^2.81.0:
+request@2, request@^2.79.0, request@^2.81.0:
   version "2.81.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.81.0.tgz#c6928946a0e06c5f8d6f8a9333469ffda46298a0"
   dependencies:
