@@ -1,12 +1,14 @@
 const sass = require('node-sass')
 
 const importReg = /\@import\s+['"]([^'"]+)['"];/g
+const commentReg = /\/\*.*\*\//g
 const variableAssignmentReg = /\$[\w-]+\s?:[^;]+;/g
 const variableStyleReg = /([\w-]+\s?:[^;]*)\$([\w-]+[^;]*;)/g
 const styleNotIncludeVarible = /[\w-]+\s?:[^$]+;/g
 
 module.exports = function (sassString, keepNormalCss) {
   sassString = sassString.replace(importReg, '')  // remove import
+    .replace(commentReg, '') // remove comment
     .replace(variableAssignmentReg, '')  // remove all variable assignment
     .replace(variableStyleReg, '-style-name-$1-variables-$2') // replace style to avoid parse error
 
