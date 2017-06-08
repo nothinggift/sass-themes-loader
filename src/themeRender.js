@@ -1,11 +1,13 @@
 const cssReg = /([^{]+\{[^}]*})/g
-const styleIncludeVaribleReg = /[\w-]+\s?:[^\$;]*\$[^;}]+;?/g
+const cssCommaReg = /(}?[^,{]+),([^,])/g
+const styleIncludeVaribleReg = /[^{:;]+\s?:[^\$;]*\$[^;}]+;?/g
 const emptyCssReg = /[^}]+\{[\s]*\}/g
 
 module.exports = function (css, themeName, theme) {
   var themedCss
   if (themeName) {
     themedCss = css.replace(cssReg, '.' + themeName + ' $1')
+      .replace(cssCommaReg, '$1,.custom $2')
   } else {
     themedCss = css
   }
