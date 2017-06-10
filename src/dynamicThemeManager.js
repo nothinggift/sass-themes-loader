@@ -1,5 +1,5 @@
 var themeRender = require('./themeRender')
-const styleNotIncludeVarible = /[\w-]+\s?:[^$]+;/g
+const styleNotIncludeVarible = /[^{;\n\r]+\s?:[^$;]+;/g
 const emptyCssReg = /[^}]+\{[\s]*\}/g
 
 function mergeOptions (obj1, obj2) {

@@ -4,7 +4,7 @@ const importReg = /\@import\s+['"]([^'"]+)['"];/g
 const commentReg = /\/\*[\s\S]*\*\//g
 const variableAssignmentReg = /\$[\w-]+\s?:[^;]+;/g
 const variableStyleReg = /([\w-]+\s?:[^;]*)\$([\w-]+[^;]*;)/g
-const styleNotIncludeVarible = /[\w-]+\s?:[^$]+;/g
+const styleNotIncludeVarible = /[^{;\n\r]+\s?:[^$;]+;/g
 
 module.exports = function (sassString, keepNormalCss) {
   sassString = sassString.replace(importReg, '')  // remove import
