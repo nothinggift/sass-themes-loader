@@ -1,6 +1,6 @@
 const cssReg = /([^{]+\{[^}]*})/g
 const cssCommaReg = /(}?[^,{]+),([^,])/g
-const styleIncludeVaribleReg = /[^{:;]+\s?:[^\$;]*\$[^;}]+;?/g
+const styleIncludeVaribleReg = /[^{:;]+\s?:[^\$;{}]*\$[^;}]+;?/g
 const emptyCssReg = /[^}]+\{[\s]*\}/g
 
 module.exports = function (css, themeName, theme) {
