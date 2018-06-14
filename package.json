@@ -1,6 +1,6 @@
 {
   "name": "sass-themes-loader",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "description": "Sass themes loader module for webpack",
   "main": "dist/index.js",
   "scripts": {
@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "loader-utils": "^1.1.0",
-    "mk-sass-variables-loader": "^0.0.7"
+    "mk-sass-variables-loader": "^0.0.11"
   },
   "devDependencies": {
     "babel": "^6.3.26",
